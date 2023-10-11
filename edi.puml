@@ -1,0 +1,12 @@
+@startuml
+storage Interlok{
+usecase edilegacy[
+edistream
+]
+}
+
+xml -> Interlok
+Interlok -> edi
+edi -> Interlok
+Interlok -> xml
+@enduml
