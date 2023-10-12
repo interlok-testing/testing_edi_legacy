@@ -1,5 +1,8 @@
 # EDI Testing
 
+[![license](https://img.shields.io/github/license/interlok-testing/testing_edi_legacy.svg)](https://github.com/interlok-testing/testing_edi_legacy/blob/develop/LICENSE)
+[![Actions Status](https://github.com/interlok-testing/testing_edi_legacy/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/interlok-testing/testing_edi_legacy/actions/workflows/gradle-build.yml)
+
 Project tests interlok-edi-legacy features
 
 ## What it does
