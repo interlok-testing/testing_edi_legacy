@@ -390,7 +390,7 @@
 								<Sequence>010</Sequence>
 								<DataType>n</DataType>
 								<MinSize>6</MinSize>
-								<MaxSize>6</MaxSize>
+								<MaxSize>8</MaxSize>
 								<MaxUse>1</MaxUse>
 								<Notes>
 									<Note Type="Description">Local date when an interchange or a functional group was  prepared.</Note>
@@ -684,7 +684,7 @@
 								<Sequence>010</Sequence>
 								<DataType>n</DataType>
 								<MinSize>6</MinSize>
-								<MaxSize>6</MaxSize>
+								<MaxSize>8</MaxSize>
 								<MaxUse>1</MaxUse>
 								<Notes>
 									<Note Type="Description">Local date when an interchange or a functional group was  prepared.</Note>

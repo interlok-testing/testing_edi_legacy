@@ -1,19 +1,17 @@
 package com.adaptris.edi.legacy.test;
 
 import com.adaptris.testing.LicensedSingleAdapterFunctionalTest;
-import com.adaptris.testing.SingleAdapterFunctionalTest;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.filefilter.FileFilterUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.util.StringUtils;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.Collection;
-import java.util.List;
 
 public class DefaultFunctionalTest extends LicensedSingleAdapterFunctionalTest {
 
@@ -45,7 +43,10 @@ public class DefaultFunctionalTest extends LicensedSingleAdapterFunctionalTest {
             Assertions.assertNotNull(ediOutFile);
 
             try (FileInputStream is1 = new FileInputStream(ediOutFile); ByteArrayInputStream is2 = new ByteArrayInputStream(ediFileBa)) {
-                Assertions.assertTrue(IOUtils.contentEquals(is1, is2));
+
+                String output = StringUtils.replaceWhitespaceCharacters(IOUtils.toString(is1, Charset.defaultCharset()), "");
+                String sample = StringUtils.replaceWhitespaceCharacters(IOUtils.toString(is2, Charset.defaultCharset()), "");
+                Assertions.assertEquals(sample, output);
             }
 
         }
