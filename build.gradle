@@ -10,24 +10,19 @@ plugins {
 ext {
   testingCommonGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/common.gradle"
 //  testingCommonGradle = "../testing_common/common.gradle"
+  testingLicensedGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/licensed.gradle"
+//  testingLicensedGradle = "../testing_common/licensed.gradle"
   interlokTestingVersion = "0.1"
   includeWar='true'
 }
 
 allprojects {
   apply from: "${testingCommonGradle}"
+  apply from: "${testingLicensedGradle}"
   // specify the version of the configuration.
   version=versioning.info.full
 }
-def interlokLicenseGeneratorCloneDir = "${buildDir}/interlok-license-generator"
-
-def cloneLicenseGeneratorRepo = tasks.register("cloneLicenseGeneratorRepo", GitClone) {
-  def cloneDir = new File(interlokLicenseGeneratorCloneDir)
-  if (!cloneDir.exists()) {
-    repository = 'git@gitlab.proagrica-tooling.dev:interlok/proagrica-network/interlok-license/generator.git'
-    directory = cloneDir
-  } else it.enabled = false
-}
+def cloneLicenseGeneratorRepo = tasks.register("cloneLicenseGeneratorRepo", GitClone, project.property('cloneLicenseGeneratorClosure'))
 
 dependencies {
   interlokRuntime ("com.adaptris:interlok-edi-legacy:$interlokVersion") { changing=true }
