@@ -8,9 +8,9 @@ plugins {
 }
 
 ext {
-  testingCommonGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/common.gradle"
+  testingCommonGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/common.gradle?timestamp=${new Date().getTime()}"
 //  testingCommonGradle = "../testing_common/common.gradle"
-  testingLicensedGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/licensed.gradle"
+  testingLicensedGradle = "https://raw.githubusercontent.com/interlok-testing/testing_common/refs/heads/master/licensed.gradle?timestamp=${new Date().getTime()}"
 //  testingLicensedGradle = "../testing_common/licensed.gradle"
   interlokTestingVersion = "0.1"
   includeWar='true'
