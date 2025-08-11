@@ -28,6 +28,4 @@ dependencies {
   interlokRuntime ("com.adaptris:interlok-edi-legacy:$interlokVersion") { changing=true }
   
   interlokJavadocs group: "com.adaptris", name: "interlok-edi-legacy", version: "$interlokVersion", classifier: "javadoc", changing: true, transitive: false
-  testImplementation group: "com.adaptris", name: "interlok-testing-common", version: "$interlokTestingVersion"
-  testImplementation group: "com.adaptris.license", name: "interlok-license-generator", version: "0.1"
 }

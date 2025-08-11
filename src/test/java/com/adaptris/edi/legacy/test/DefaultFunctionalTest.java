@@ -1,6 +1,6 @@
 package com.adaptris.edi.legacy.test;
 
-import com.adaptris.testing.LicensedSingleAdapterFunctionalTest;
+import com.adaptris.testing.SingleAdapterFunctionalTest;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
@@ -13,7 +13,7 @@ import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.Collection;
 
-public class DefaultFunctionalTest extends LicensedSingleAdapterFunctionalTest {
+public class DefaultFunctionalTest extends SingleAdapterFunctionalTest {
 
     @Test
     public void test() throws Exception {
